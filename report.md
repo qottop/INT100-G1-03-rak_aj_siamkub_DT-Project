@@ -3,7 +3,7 @@
 ## Week 4
 
 ### 1. Interview Script
-[View Interview Script](./interview/interview-script.md)
+[View Interview Script](./Interview/Script.md)
 
 ### 2. What-How-Why
 [View What-How-Why](./empathize/what-how-why.md)
