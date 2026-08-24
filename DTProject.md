@@ -1,4 +1,3 @@
-
 # Design Thinking Project
 
 ## Week 4
@@ -17,4 +16,3 @@
 
 ### 5. Initial PoV
 [View PoV Statement](./define/pov.md)
-
