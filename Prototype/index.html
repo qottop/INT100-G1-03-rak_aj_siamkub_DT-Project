@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Thonburirom Smart Check - Prototype เว็บไซต์เช็กความหนาแน่นและที่จอดรถสวนธนบุรีรมย์" />
+  <title>Thonburirom Smart Check</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">T</div>
+        <div>
+          <div class="brand-name">Thonburirom</div>
+          <div class="brand-sub">SMART CHECK</div>
+        </div>
+      </div>
+      <div class="header-meta">
+        <div class="live-chip"><span class="pulse"></span> Prototype Mode</div>
+        <button class="icon-btn" id="themeBtn" aria-label="เปลี่ยนธีม">◐</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <span class="eyebrow">สวนธนบุรีรมย์ · PRE-VISIT CHECK</span>
+          <h1>เช็กก่อนออกจากบ้าน<br><span>มาแล้วไม่ต้องลุ้น</span></h1>
+          <p class="hero-copy">
+            ดูความหนาแน่นของคน ที่จอดรถ จุดบริการน้ำ และช่วงเวลาที่เหมาะสม
+            ก่อนออกมาออกกำลังกาย
+          </p>
+          <div class="hero-actions">
+            <button class="primary-btn" data-scroll="dashboard">เช็กสถานะตอนนี้ <span>→</span></button>
+            <button class="ghost-btn" data-scroll="how">Prototype นี้ทำงานอย่างไร?</button>
+          </div>
+        </div>
+
+        <div class="hero-orb" aria-hidden="true">
+          <div class="orb-ring ring-1"></div>
+          <div class="orb-ring ring-2"></div>
+          <div class="orb-ring ring-3"></div>
+          <div class="orb-core">
+            <span>THB</span>
+            <strong>READY</strong>
+            <small>TO RUN</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="status-grid" id="dashboard">
+        <article class="status-card people-card">
+          <div class="card-top">
+            <div>
+              <div class="card-label">PEOPLE DENSITY</div>
+              <h2>ค่อนข้างหนาแน่น</h2>
+            </div>
+            <div class="status-icon people-icon">👥</div>
+          </div>
+          <div class="meter"><span style="width: 74%"></span></div>
+          <div class="meter-meta"><span>ความหนาแน่น</span><strong>74%</strong></div>
+          <div class="card-note">ช่วงเย็นมีแนวโน้มคนเยอะ เหมาะกับการมาในช่วงคนน้อย</div>
+          <button class="text-btn" data-page="density">ดูรายละเอียดความหนาแน่น →</button>
+        </article>
+
+        <article class="status-card parking-card">
+          <div class="card-top">
+            <div>
+              <div class="card-label">CAR PARKING</div>
+              <h2>ใกล้เต็ม</h2>
+            </div>
+            <div class="status-icon parking-icon">🚗</div>
+          </div>
+          <div class="parking-number"><strong id="availableSlots">4</strong><span>/ 20 ช่องว่าง</span></div>
+          <div class="parking-pills">
+            <span class="pill amber">16 / 20 คัน</span>
+            <span class="pill">Capacity 20</span>
+          </div>
+          <div class="card-note">จำนวนที่จอดรถยนต์อ้างอิงข้อมูลพื้นที่สาธารณะของ กทม.</div>
+          <button class="text-btn" data-page="parking">ดูข้อมูลที่จอดรถ →</button>
+        </article>
+
+        <article class="status-card water-card">
+          <div class="card-top">
+            <div>
+              <div class="card-label">WATER STATION</div>
+              <h2>ควรวางจุดเพิ่ม</h2>
+            </div>
+            <div class="status-icon water-icon">💧</div>
+          </div>
+          <div class="big-stat">03 <span>จุดใน Prototype</span></div>
+          <div class="mini-route">
+            <span class="route-node active">START</span>
+            <span class="route-line"></span>
+            <span class="route-node">W1</span>
+            <span class="route-line"></span>
+            <span class="route-node">W2</span>
+            <span class="route-line"></span>
+            <span class="route-node">W3</span>
+          </div>
+          <div class="card-note">แนวคิดจาก Pain Point เรื่องจุดกรอกน้ำมีน้อยและห่างกัน</div>
+        </article>
+      </section>
+
+      <section class="main-content">
+        <article class="panel recommendation-panel">
+          <div class="panel-head">
+            <div>
+              <div class="card-label">TIME RECOMMENDATION</div>
+              <h2>ช่วงไหนเหมาะกับคุณ?</h2>
+            </div>
+            <span class="today">วันนี้ · Prototype</span>
+          </div>
+
+          <div class="time-grid" id="timeGrid"></div>
+
+          <div class="recommendation-box">
+            <div class="rec-icon">✨</div>
+            <div>
+              <div class="rec-label">RECOMMENDED</div>
+              <strong>เลือกช่วงคนน้อยเพื่อวิ่งต่อเนื่อง</strong>
+              <p>ต้นแบบนี้ใช้ข้อมูลตัวอย่างเพื่อสาธิตการทำงาน ไม่ใช่ข้อมูล Real-time</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel quick-panel">
+          <div class="panel-head">
+            <div>
+              <div class="card-label">QUICK VIEW</div>
+              <h2>สถานะสำคัญ</h2>
+            </div>
+          </div>
+          <div class="quick-list">
+            <div class="quick-row">
+              <div class="quick-left"><span class="dot green"></span><span>บรรยากาศร่มรื่น</span></div>
+              <span class="tag good">จุดเด่น</span>
+            </div>
+            <div class="quick-row">
+              <div class="quick-left"><span class="dot amber"></span><span>ช่วง Peak คนเยอะ</span></div>
+              <span class="tag warn">ควรเลี่ยง</span>
+            </div>
+            <div class="quick-row">
+              <div class="quick-left"><span class="dot amber"></span><span>ที่จอดรถ 20 คัน</span></div>
+              <span class="tag warn">จำกัด</span>
+            </div>
+            <div class="quick-row">
+              <div class="quick-left"><span class="dot red"></span><span>ไฟ / สัตว์บางจุด</span></div>
+              <span class="tag risk">ต้องระวัง</span>
+            </div>
+          </div>
+          <div class="insight-strip">
+            <span>💡</span>
+            <p>เป้าหมายของระบบคือช่วยให้ผู้ใช้วางแผนก่อนเข้าพื้นที่ ลดความไม่สะดวกจากคนแน่นและหาที่จอดรถยาก</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel map-panel">
+        <div class="panel-head">
+          <div>
+            <div class="card-label">PROTOTYPE MAP</div>
+            <h2>ภาพรวมเส้นทางและจุดบริการ</h2>
+          </div>
+          <span class="legend"><span class="dot green"></span> จุดปลอดภัย <span class="dot amber"></span> จุดควรระวัง</span>
+        </div>
+
+        <div class="map-stage">
+          <div class="map-grid"></div>
+          <div class="map-label park-label">สวนธนบุรีรมย์</div>
+          <div class="path path-1"></div>
+          <div class="path path-2"></div>
+          <div class="path path-3"></div>
+          <div class="map-pin parking-pin" title="ที่จอดรถ">🚗<span>Parking</span></div>
+          <div class="map-pin water-pin pin-1" title="จุดน้ำ">💧<span>Water 01</span></div>
+          <div class="map-pin water-pin pin-2" title="จุดน้ำ">💧<span>Water 02</span></div>
+          <div class="map-pin water-pin pin-3" title="จุดน้ำ">💧<span>Water 03</span></div>
+          <div class="map-pin alert-pin" title="จุดเฝ้าระวัง">⚠️<span>Alert Zone</span></div>
+          <div class="runner runner-1">🏃</div>
+          <div class="runner runner-2">🏃‍♀️</div>
+          <div class="map-overlay">
+            <div class="overlay-title">RUNNING LOOP</div>
+            <strong>≈ 1–1.05 KM / รอบ</strong>
+            <small>ใช้สำหรับนับรอบและติดตามระยะทาง</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="how-section" id="how">
+        <div class="section-title">
+          <span class="eyebrow">DESIGN THINKING</span>
+          <h2>จาก Pain Point → Prototype</h2>
+          <p>ต้นแบบนี้สรุปปัญหาจากการสัมภาษณ์ผู้ใช้ แล้วแปลงเป็นประสบการณ์ก่อนเข้าสวน</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span>01</span>
+            <h3>Check</h3>
+            <p>ผู้ใช้เปิดเว็บไซต์ก่อนออกจากบ้าน</p>
+          </div>
+          <div class="step">
+            <span>02</span>
+            <h3>Compare</h3>
+            <p>ดู People Density + Parking</p>
+          </div>
+          <div class="step">
+            <span>03</span>
+            <h3>Choose</h3>
+            <p>เลือกช่วงเวลาที่เหมาะกับตัวเอง</p>
+          </div>
+          <div class="step">
+            <span>04</span>
+            <h3>Go</h3>
+            <p>เดินทางมาโดยรู้ข้อมูลล่วงหน้า</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="prototype-note">
+        <div>
+          <span class="eyebrow">IMPORTANT</span>
+          <h3>ข้อมูลที่เป็น “ตัวอย่าง Prototype”</h3>
+          <p>
+            ตัวเลข People Density, เวลาแนะนำ และจุดบริการน้ำในหน้านี้เป็นข้อมูลจำลองเพื่อแสดงการทำงานของระบบ
+            ส่วน Capacity ที่จอดรถยนต์ 20 คันเป็นข้อมูลอ้างอิงจากข้อมูลพื้นที่สาธารณะของกรุงเทพมหานคร
+          </p>
+        </div>
+        <button class="secondary-btn" id="simulateBtn">จำลองสถานะใหม่ ↻</button>
+      </section>
+    </main>
+
+    <footer>
+      <div>THB Smart Check · Design Thinking Week 5 Prototype</div>
+      <div>Made for presentation & testing</div>
+    </footer>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
