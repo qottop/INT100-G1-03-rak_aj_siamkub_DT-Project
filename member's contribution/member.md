@@ -10,6 +10,7 @@
 - ideate
 - feedback-matrix
 - Test scripts ( ideas )
+- feedback list 
 
 ## Ter ( Nititada Kaoroptham 69130500030 )
 
@@ -24,10 +25,13 @@
 - What How Why
 - Prototype
 - Next Step
+- feedback list
 
 ## Ice ( นายจิรายุธ บูรณะจันทร์ 69130500008 )
 
-
+- Interview
+- Scripts
+- Group Members
 
 ## ThankYou ( นายภัทรดนัย แจ่มประทีป 69130500043 )
 
